@@ -30,6 +30,7 @@ namespace LoggingExample
             //suggested way (from MS): Always use source-generated logging so IsEnabled() and Define() is always used
             _logger.LogInformationExt("Foo");
             //LoggingExtensions.LogInformationStatic(_logger, "Foo");
+            //_logger.LogLevelDynamic(LogLevel.Warning, "warn");
         }
     }
 
@@ -42,5 +43,8 @@ namespace LoggingExample
 
         //[LoggerMessage("There is a {foo}", Level = LogLevel.Information)]
         //public static partial void LogInformationStatic(ILogger logger, string foo);
+
+        //[LoggerMessage("There is a {foo}")]
+        //public static partial void LogLevelDynamic(this ILogger logger, LogLevel logLevel, string foo);
     }
 }
